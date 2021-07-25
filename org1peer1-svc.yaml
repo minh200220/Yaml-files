@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: org1peeri1
+  labels:
+    run: org1peer1
+spec:
+  type: ClusterIP
+  selector:
+    name: org1peer1
+  ports:
+    - protocol: TCP
+      port: 7051
+      name: grpc
+    - protocol: TCP
+      port: 7061
+      name: events
+    - protocol: TCP
+      port: 5984
+      name: couchdb
